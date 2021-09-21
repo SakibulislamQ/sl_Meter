@@ -6,9 +6,9 @@
 
 class oupt:
     def __init__(miter, num, froms ,tos):
-    miter.num = num
-    miter.froms = froms
-    miter.tos = tos
+        miter.num = num
+        miter.froms = froms
+        miter.tos = tos
 
     def conv_cm(miter, num, froms, tos):
         if num == 'meter':
