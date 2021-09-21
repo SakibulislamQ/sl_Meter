@@ -11,11 +11,30 @@ class oupt:
         miter.tos = tos
 
     def conv_cm(miter, num, froms, tos):
-        if num == 'meter':
+        if froms == 'meter':
             main_num = num * 39.37007874
-        if num == 'foot':
+        if froms == 'foot':
             main_num = num * 12
-        if num == 'cm':
+        if froms == 'cm':
             main_num = num * 0.03280839895
-        if num == 'meter':
+        if froms == 'inchi':
             main_num = num * 1
+
+    def conv_tos(miter, num, froms, tos):
+        if tos == 'meter':
+            oupts = main_num / 39.37007874
+        if tos == 'foot':
+            oupts = main_num / 12
+        if tos == 'cm':
+            oupts = main_num / 0.03280839895
+        if tos == 'inchi':
+            oupts = main_num / 1
+
+
+
+
+
+
+
+
+
