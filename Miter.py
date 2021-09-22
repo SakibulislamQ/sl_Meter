@@ -43,8 +43,46 @@ class Oupt:
 
 # making main window >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+from tkinter import * # importing module
+from tkinter.ttk import Combobox
 
+win = Tk() # making window 
+# designimg window >>>>>
+win.title('Meter')
+win.geometry('700x300')
+win.attributes('-topmost',1)
+win.configure(bg='SkyBlue')
+win.resizable(0,0)
+# designing window <<<<
+# making From text
+from_label = Label(win, text='From', font=('Arial',20),bg='SkyBlue', fg='red')
+from_label.place(x=120,y=60)
+# making To text
+from_label = Label(win, text='To', font=('Arial',20),bg='SkyBlue', fg='red')# From text 
+from_label.place(x=400,y=60)
+# making from combobox >>>>
+from_combo = Combobox(win, height=20,width=30)
+from_combo['values']=('Meter','Feet','Centimetre','Inch')
+from_combo.current(1)# set the selected items
+from_combo['state']='readonly'
+from_combo.place(x=120,y=100)
 
+# making to combobox >>>>
+from_combo = Combobox(win, height=20,width=30)
+from_combo['values']=('Meter','Feet','Centimetre','Inch')
+from_combo.current(1)# set the selected items
+from_combo['state']='readonly'
+from_combo.place(x=400,y=100)
+
+# making to combobox >>>>
+from_combo = Combobox(win, height=20,width=30)
+from_combo['values']=('Meter','Feet','Centimetre','Inch')
+from_combo.current(1)# set the selected items
+from_combo['state']='readonly'
+from_combo.place(x=120,y=100)
+
+win.mainloop() # window mainloop
+# making main window <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 
