@@ -1,3 +1,4 @@
+# main miter >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ''' 1 miter = 39.37007874 inchi
     1 foot = 12 inchi
     1 cm = 0.03280839895 inchi
@@ -10,7 +11,7 @@ class Oupt:
         miter.froms = froms
         miter.tos = tos
 
-    def conv_cm(miter):
+    def conv_cm(miter): # conv Froms to inch
         if miter.froms == 'meter':
             main_num = miter.num * 39.37007874
             return main_num
@@ -24,7 +25,7 @@ class Oupt:
             main_num = miter.num * 1
             return main_num
 
-    def conv_tos(miter, main_num):
+    def conv_tos(miter, main_num): # comv inch to Tos
         if miter.tos == 'meter':
             oupts = main_num / 39.37007874
             return oupts
@@ -37,13 +38,11 @@ class Oupt:
         if miter.tos == 'inchi':
             oupts = main_num / 1
             return oupts
-    
+# main miter <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  
 
-mit = Oupt(50,'foot', 'meter')
-def out_put():
-    asas = mit.conv_tos(mit.conv_cm())
-    print(asas)
-out_put()
+
+# making main window >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 
 
