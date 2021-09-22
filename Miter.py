@@ -81,6 +81,10 @@ from_combo.current(1)# set the selected items
 from_combo['state']='readonly'
 from_combo.place(x=120,y=100)
 
+# input num >>>>
+inp_num = Entry(win, bd=0)
+inp_num.place(x=300, y=150)
+
 win.mainloop() # window mainloop
 # making main window <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
