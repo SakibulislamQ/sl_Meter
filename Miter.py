@@ -12,30 +12,30 @@ class Oupt:
         miter.tos = tos
 
     def conv_cm(miter): # conv Froms to inch
-        if miter.froms == 'meter':
+        if miter.froms == 'Meter':
             main_num = miter.num * 39.37007874
             return main_num
-        if miter.froms == 'foot':
+        if miter.froms == 'Feet':
             main_num = miter.num * 12
             return main_num
-        if miter.froms == 'cm':
+        if miter.froms == 'Centimetre':
             main_num = miter.num * 0.03280839895
             return main_num
-        if miter.froms == 'inchi':
+        if miter.froms == 'Inch':
             main_num = miter.num * 1
             return main_num
 
     def conv_tos(miter, main_num): # comv inch to Tos
-        if miter.tos == 'meter':
+        if miter.tos == 'Meter':
             oupts = main_num / 39.37007874
             return oupts
-        if miter.tos == 'foot':
+        if miter.tos == 'Feet':
             oupts = main_num / 12
             return oupts
-        if miter.tos == 'cm':
+        if miter.tos == 'Centimetre':
             oupts = main_num / 0.03280839895
             return oupts
-        if miter.tos == 'inchi':
+        if miter.tos == 'Inch':
             oupts = main_num / 1
             return oupts
 # main miter <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  
@@ -58,28 +58,37 @@ win.resizable(0,0)
 from_label = Label(win, text='From', font=('Arial',20),bg='SkyBlue', fg='red')
 from_label.place(x=120,y=40)
 # making To text
-from_label = Label(win, text='To', font=('Arial',20),bg='SkyBlue', fg='red')# From text 
-from_label.place(x=400,y=40)
+to_label = Label(win, text='To', font=('Arial',20),bg='SkyBlue', fg='red')# From text 
+to_label.place(x=400,y=40)
 # making from combobox >>>>
-from_combo = Combobox(win, height=20,width=30)
+from_combo = Combobox(win,width=30)
 from_combo['values']=('Meter','Feet','Centimetre','Inch')
 from_combo.current(0)# set the selected items
 from_combo['state']='readonly'
 from_combo.place(x=120,y=80)
 
 # making to combobox >>>>
-from_combo = Combobox(win, height=20,width=30)
-from_combo['values']=('Meter','Feet','Centimetre','Inch')
-from_combo.current(1)# set the selected items
-from_combo['state']='readonly'
-from_combo.place(x=400,y=80)
+to_combo = Combobox(win, width=30)
+to_combo['values']=('Meter','Feet','Centimetre','Inch')
+to_combo.current(1)# set the selected items
+to_combo['state']='readonly'
+to_combo.place(x=400,y=80)
 
 # input num >>>>
 inp_num = Entry(win, bd=0)
 inp_num.place(x=300, y=120)
-
+# making button click
+def btn_cl():
+    _from = from_combo.get()
+    _to = from_combo.get()
+    _imp = float(inp_num.get())
+    result = Oupt(_imp, _to, _from)
+    output = result.conv_tos(result.conv_cm())
+# making oupt
+outp = Label(win, text='fdkf', font=('Calibri Light bold',20), bg='SkyBlue', fg='red3')
+outp.place(x=345,y=200)
 # Go button
-go_button = Button(win, text='Go', font=('Arial bold', 12),bg='red', bd=0)
+go_button = Button(win, text='Go', font=('Arial bold', 12),bg='red', bd=0, command=btn_cl)
 go_button.place(x=350,y=150)
 
 win.mainloop() # window mainloop
