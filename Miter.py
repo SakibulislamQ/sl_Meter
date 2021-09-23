@@ -56,34 +56,31 @@ win.resizable(0,0)
 # designing window <<<<
 # making From text
 from_label = Label(win, text='From', font=('Arial',20),bg='SkyBlue', fg='red')
-from_label.place(x=120,y=60)
+from_label.place(x=120,y=40)
 # making To text
 from_label = Label(win, text='To', font=('Arial',20),bg='SkyBlue', fg='red')# From text 
-from_label.place(x=400,y=60)
+from_label.place(x=400,y=40)
 # making from combobox >>>>
 from_combo = Combobox(win, height=20,width=30)
 from_combo['values']=('Meter','Feet','Centimetre','Inch')
-from_combo.current(1)# set the selected items
+from_combo.current(0)# set the selected items
 from_combo['state']='readonly'
-from_combo.place(x=120,y=100)
+from_combo.place(x=120,y=80)
 
 # making to combobox >>>>
 from_combo = Combobox(win, height=20,width=30)
 from_combo['values']=('Meter','Feet','Centimetre','Inch')
 from_combo.current(1)# set the selected items
 from_combo['state']='readonly'
-from_combo.place(x=400,y=100)
-
-# making to combobox >>>>
-from_combo = Combobox(win, height=20,width=30)
-from_combo['values']=('Meter','Feet','Centimetre','Inch')
-from_combo.current(1)# set the selected items
-from_combo['state']='readonly'
-from_combo.place(x=120,y=100)
+from_combo.place(x=400,y=80)
 
 # input num >>>>
 inp_num = Entry(win, bd=0)
-inp_num.place(x=300, y=150)
+inp_num.place(x=300, y=120)
+
+# Go button
+go_button = Button(win, text='Go', font=('Arial bold', 12),bg='red', bd=0)
+go_button.place(x=350,y=150)
 
 win.mainloop() # window mainloop
 # making main window <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
