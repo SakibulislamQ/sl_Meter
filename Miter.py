@@ -1,7 +1,7 @@
 # main miter >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-''' 1 miter = 39.37007874 inchi
-    1 foot = 12 inchi
-    1 cm = 0.03280839895 inchi
+''' 1 miter = 39.37007874 inch
+    1 feet = 12 inchi
+    1 cm = 0.3937007874 inch
     1 inchi = 1 inchi
 '''
 def conv(num, froms, tos): # conv 'fron' to 'to'
@@ -12,7 +12,7 @@ def conv(num, froms, tos): # conv 'fron' to 'to'
         main_num = num * 12
 
     if froms == 'Centimetre':
-        main_num = num * 0.03280839895
+        main_num = num * 0.3937007874
 
     if froms == 'Inch':
         main_num = num * 1
@@ -24,7 +24,7 @@ def conv(num, froms, tos): # conv 'fron' to 'to'
         oupts = main_num / 12
         return oupts
     if tos == 'Centimetre':
-        oupts = main_num / 0.03280839895
+        oupts = main_num / 0.3937007874
         return oupts
     if tos == 'Inch':
         oupts = main_num / 1
@@ -38,6 +38,7 @@ from tkinter import ttk
 win = Tk() # making window 
 # designimg window >>>>>
 win.title('Meter')
+win.iconbitmap('data/meter.ico')
 win.geometry('700x300')
 win.attributes('-topmost',1)
 win.configure(bg='SkyBlue')
@@ -86,6 +87,7 @@ go_button.place(x=350,y=150)
 
 win.mainloop() # window mainloop
 # making main window <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 
 
