@@ -33,7 +33,7 @@ def conv(num, froms, tos): # conv 'fron' to 'to'
 # making main window >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 from tkinter import * 
-from tkinter.ttk import Combobox
+from tkinter import ttk
 
 win = Tk() # making window 
 # designimg window >>>>>
@@ -46,18 +46,21 @@ win.resizable(0,0)
 # making From text
 from_label = Label(win, text='From', font=('Arial',20),bg='SkyBlue', fg='red')
 from_label.place(x=120,y=40)
+
 # making To text
 to_label = Label(win, text='To', font=('Arial',20),bg='SkyBlue', fg='red')# From text 
 to_label.place(x=400,y=40)
+
 # making from combobox >>>>
-from_combo = Combobox(win,width=30, state='readonly')
+from_string = StringVar()
+from_combo = ttk.Combobox(win,width=30, state='readonly', textvariable=from_string)
 from_combo['values']=('Meter','Feet','Centimetre','Inch')
 from_combo.current(0)# set the selected items
 from_combo.place(x=120,y=80)
 
-
 # making to combobox >>>>
-to_combo = Combobox(win, width=30, state='readonly')
+to_string = StringVar()
+to_combo = ttk.Combobox(win, width=30, state='readonly', textvariable=to_string)
 to_combo['values']=('Meter','Feet','Centimetre','Inch')
 to_combo.current(1)# set the selected items
 to_combo.place(x=400,y=80)
@@ -68,10 +71,11 @@ inp_num.place(x=300, y=120)
 
 # making button click
 def btn_cl():
-    _from = from_combo.get()
-    _to = from_combo.get()
+    _from = from_string.get()
+    _to = to_string.get()
     _imp = float(inp_num.get())
     result = conv(_imp, _from, _to)
+    result = round(result,4)
     outp.configure(text=result)
 # making oupt
 outp = Label(win, text='', font=('Calibri Light bold',20), bg='SkyBlue', fg='red3')
@@ -82,7 +86,6 @@ go_button.place(x=350,y=150)
 
 win.mainloop() # window mainloop
 # making main window <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 
 
 
