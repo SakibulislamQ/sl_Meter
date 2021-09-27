@@ -38,7 +38,7 @@ from tkinter import ttk
 win = Tk() # making window 
 # designimg window >>>>>
 win.title('Meter')
-win.iconbitmap('data/meter.ico')
+win.iconbitmap('ac.ico')
 win.geometry('700x300')
 win.attributes('-topmost',1)
 win.configure(bg='SkyBlue')
